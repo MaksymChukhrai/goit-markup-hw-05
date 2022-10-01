@@ -1,2 +1,2 @@
 # Web-Studio
-D:\Mega sync\IT\GO It\Web Studio\goit-markup-hw-05
+https://maksymchukhrai.github.io/goit-markup-hw-05/index.html
