@@ -724,26 +724,21 @@ transform: translateY(100%);
 
 .overlay p{
   color: var( --primary-white-color);
-  /* padding: 63px 24px; */
   font-size: 18px;
   line-height: 1.56;
-  /* position: absolute; */
-  /* top: 0;
-  left: 0; */
   letter-spacing: 0.3em;
-  /* font-style: normal;
-  font-family: 'Roboto';  */
-  /* width: 100%;
-  height: 100%; */
   }
 
 /* modal */
 .backdrop{
   position: fixed;
-  top:221px;
-  left:536px;
+  top:0;
+  left: 0;
+  z-index: 100;
   width: 100%;
-  height:100vh;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+
   background:var(--primary-white-color);
   box-shadow: var( --card-shadow);
 }
@@ -760,15 +755,23 @@ transform: translateY(100%);
 .is-hidden{
   opacity:0;
   visibility:hidden;
+  pointer-events: none;
 }
 .close-button{
-  position:relative;
-  left: 490px;
+  position: absolute;
   top: 8px;
-  /* background: grey; */
-  color:#ffffff;
-  border-radius: 50%;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%; 
+  padding: 0;
   width: 30px;
-height: 30px;
+  height: 30px;
 
+}
+.modal-close-icon{
+  fill: var(--primery-black-color);
 }
