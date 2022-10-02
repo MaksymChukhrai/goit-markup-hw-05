@@ -17,8 +17,8 @@
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
   --card-projects-portfolio: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --project-item-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
-  --box-overlay-color:rgba(33, 150, 243, 0.9);
-  --box-overlay-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+  --box-overlay-color: rgba(33, 150, 243, 0.9);
+  --box-overlay-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --transition-speed: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -139,22 +139,21 @@ a.contacts:focus {
 
 .links {
   color: var(--primary-text-color);
-
 }
 .contacts {
   color: var(--primary-grey-color);
   display: inline-flex;
   align-items: center;
 }
-.link-current{
+.link-current {
   color: var(--accent-color);
-  position:relative;
-    }
-.link-current::after{
+  position: relative;
+}
+.link-current::after {
   position: absolute;
 
   display: block;
-  content:"";
+  content: "";
   width: 100%;
   height: 4px;
   border-radius: 2px;
@@ -163,11 +162,9 @@ a.contacts:focus {
   background-color: var(--accent-color);
 }
 
-
 .navi {
   /* margin-right: auto; */
   margin-left: 93px;
-  
 }
 
 .list-nav,
@@ -218,7 +215,6 @@ a.contacts:focus {
 }
 
 .slogan-button {
-
   cursor: pointer;
   background-color: var(--accent-color);
   color: var(--primary-white-color);
@@ -257,7 +253,6 @@ a.contacts:focus {
   justify-content: center;
   border-radius: 50%;
   fill: var(--primary-icon-color);
-  
 }
 .footer-social-link {
   display: flex;
@@ -267,7 +262,7 @@ a.contacts:focus {
   justify-content: center;
   border-radius: 50%;
   fill: var(--primary-white-color);
-  background-color:rgba(255, 255, 255, 0.1); 
+  background-color: rgba(255, 255, 255, 0.1);
 }
 /* .social-link :hover,
 .social-link :focus {
@@ -290,12 +285,10 @@ a.contacts:focus {
 .social-icon {
   width: 20px;
   height: 20px;
-
 }
 .footer-social-icon {
   width: 20px;
   height: 20px;
-
 }
 
 .job {
@@ -310,6 +303,19 @@ a.contacts:focus {
   padding-left: 0px;
 }
 
+.work-example-title {
+  bottom: 0;
+  width: 100%;
+  color: var(--primary-white-color);
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  padding: 27px 0;
+}
 .qualities,
 .job-img,
 .our-team {
@@ -420,7 +426,7 @@ a.contacts:focus {
 } */
 .client-link:hover,
 .client-link:focus {
-  border-color:var(--accent-color);
+  border-color: var(--accent-color);
   fill: var(--accent-color);
   transition: var(--transition-speed);
 }
@@ -506,7 +512,6 @@ a.contacts:focus {
 .section-portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
-  
 }
 .container-portfolio {
   margin-right: auto;
@@ -674,7 +679,6 @@ a.contacts:focus {
   display: flex;
   list-style: none;
   justify-content: center;
-
 }
 .social-list {
   margin-top: 16px;
@@ -707,13 +711,12 @@ a.contacts:focus {
   /* content: ''; */
   /* top: 0;
   left: 0; */
-  padding: 63px 24px;   
+  padding: 63px 24px;
   bottom: 0;
   width: 100%;
   height: 100%;
   background-color: var(--box-overlay-color);
-transform: translateY(100%);
-
+  transform: translateY(100%);
 }
 
 .project-item:hover .overlay,
@@ -722,56 +725,67 @@ transform: translateY(100%);
   transition: var(--transition-speed);
 }
 
-.overlay p{
-  color: var( --primary-white-color);
+.overlay p {
+  color: var(--primary-white-color);
   font-size: 18px;
   line-height: 1.56;
-  letter-spacing: 0.3em;
-  }
+  letter-spacing: 0.03em;
+}
 
 /* modal */
-.backdrop{
+.backdrop {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 100;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 
-  background:var(--primary-white-color);
-  box-shadow: var( --card-shadow);
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  box-shadow: var(--card-shadow);
+  transform: rotate(360deg);
+  transition: opacity var(--transition-speed), transform 900ms linear;
 }
-.modal{
-  width: 528px;
-  height: 581px;
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  background:var(--primary-white-color);
-  box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-.is-hidden{
-  opacity:0;
-  visibility:hidden;
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
-.close-button{
+
+.backdrop.is-hidden.modal {
+  transform: rotate(180deg);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  background: var(--primary-white-color);
+  box-shadow: var(--card-shadow);
+  border-radius: 4px;
+}
+
+.close-button {
   position: absolute;
   top: 8px;
   right: 8px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center;
   background-color: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%; 
+  fill: #000000; */
+  border: 1px solid rgba((0, 0, 0, 0.1));
+  border-radius: 50%;
   padding: 0;
-  width: 30px;
-  height: 30px;
-
+  /* width: 30px;
+  height: 30px; */
 }
-.modal-close-icon{
-  fill: var(--primery-black-color);
+.modal-close-icon {
+  fill: var(--primary-black-color);
 }
